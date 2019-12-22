@@ -14,6 +14,11 @@ import com.mutants.request.MutantRequest;
 import com.mutants.services.MutantService;
 
 
+/**
+ * Controller responsible for all mutant requests
+ * @author Pablo
+ *
+ */
 @RestController
 @RequestMapping("/api/")
 @CrossOrigin("*")
@@ -22,6 +27,15 @@ public class MutantController {
 	@Autowired
 	private MutantService mutantService;
 
+	/**
+	 * 
+	 * @param data
+	 * @return 
+	 * 200 when the human is mutant
+	 * 403 when the human is not mutant
+	 * 404 when the dna is invalid
+	 * 
+	 */
 	@PostMapping("/v1/mutants")
 	public ResponseEntity<Object> isMutantV1(@RequestBody MutantRequest data) {
 		try {

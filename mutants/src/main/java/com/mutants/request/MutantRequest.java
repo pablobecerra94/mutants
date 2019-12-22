@@ -1,5 +1,11 @@
 package com.mutants.request;
 
+/**
+ * Represents the request of the mutant service 
+ * Its a String array that contains the human dna
+ * @author Pablo
+ *
+ */
 public class MutantRequest {
 
 	private String[] dna;

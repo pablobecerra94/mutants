@@ -4,20 +4,32 @@ import org.springframework.stereotype.Service;
 
 import com.mutants.exception.InvalidDnaException;
 
+/**
+ * Service that contains the logic to detect mutants
+ * @author Pablo
+ *
+ */
 @Service
 public class MutantService {
 
+	private static final String THE_DNA_MUST_NOT_BE_EMPTY = "The DNA must not be empty";
+	private static final String ALL_DNA_ARRAYS_MUST_HAVE_THE_SAME_LENGTH = "All dna arrays must have the same length";
 	private static final int MINIMUN_CHAR_SEQUENCE_TO_BE_MUTANT = 2;
 	private static final int SECUENCE_AMOUNT = 3;
 
+	/**
+	 * Method responsible for detecting whether humans are mutants
+	 * 
+	 * @param dna
+	 * @return true if the human is mutant, false if he is not mutant
+	 * @throws InvalidDnaException
+	 */
 	public Boolean isMutant(String[] dna) throws InvalidDnaException {
 		if (dna == null || dna.length == 0) {
-			throw new InvalidDnaException("The DNA must not be empty");
+			throw new InvalidDnaException(THE_DNA_MUST_NOT_BE_EMPTY);
 		}
 
-		int length = dna.length;
-
-		char[][] finalDNA = buildArray(dna, length);
+		char[][] finalDNA = buildArray(dna);
 
 		int repeatedAmount = analyzeHorizontally(finalDNA);
 
@@ -40,8 +52,6 @@ public class MutantService {
 		repeatedAmount += analyzeLowerPrimaryDiagonal(finalDNA);
 
 		if (repeatedAmount >= MINIMUN_CHAR_SEQUENCE_TO_BE_MUTANT) {
-			System.out.println(repeatedAmount);
-			System.out.println("Mutante Primary LOWER");
 			return true;
 		}
 
@@ -56,6 +66,13 @@ public class MutantService {
 		return repeatedAmount >= MINIMUN_CHAR_SEQUENCE_TO_BE_MUTANT;
 	}
 
+	/**
+	 * Analyze the diagonals below the main diagonal in descending order to detect
+	 * strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeLowerPrimaryDiagonal(char[][] finalDNA) {
 		int repeatedAmount = 0;
 		int charCount;
@@ -78,6 +95,13 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
+	/**
+	 * Analyze the diagonals above the main diagonal in descending order to detect
+	 * strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeUpperPrimaryDiagonal(char[][] finalDNA) {
 		int repeatedAmount = 0;
 		int charCount;
@@ -100,6 +124,13 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
+	/**
+	 * Analyze the diagonals above the secondary diagonal in ascending order to
+	 * detect strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeUpperSecondaryDiagonal(char[][] finalDNA) {
 		int repeatedAmount = 0;
 		int charCount;
@@ -122,6 +153,13 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
+	/**
+	 * Analyze the diagonals below the secondary diagonal in ascending order to
+	 * detect strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeLowerSecondaryDiagonal(char[][] finalDNA) {
 		int repeatedAmount = 0;
 		int charCount;
@@ -143,6 +181,12 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
+	/**
+	 * Analyze each column to detect strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeVertically(char[][] finalDNA) {
 		int repeatedAmount = 0;
 		for (int j = 0; j < finalDNA.length; j++) {
@@ -163,6 +207,12 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
+	/**
+	 * Analyze each row to detect strings of 4 equal characters
+	 * 
+	 * @param finalDNA
+	 * @return the number of equal character strings detected in the diagonals
+	 */
 	private static int analyzeHorizontally(char[][] finalDNA) {
 		int repeatedAmount = 0;
 
@@ -184,12 +234,18 @@ public class MutantService {
 		return repeatedAmount;
 	}
 
-	private static char[][] buildArray(String[] dna, int length) throws InvalidDnaException {
-		char[][] finalDNA = new char[length][length];
+	/**
+	 * @param dna
+	 * @param length
+	 * @return
+	 * @throws InvalidDnaException
+	 */
+	private static char[][] buildArray(String[] dna) throws InvalidDnaException {
+		char[][] finalDNA = new char[dna.length][dna.length];
 
 		for (int i = 0; i < dna.length; i++) {
-			if (dna[i].length() != length) {
-				throw new InvalidDnaException("All dna arrays must have the same length");
+			if (dna[i].length() != dna.length) {
+				throw new InvalidDnaException(ALL_DNA_ARRAYS_MUST_HAVE_THE_SAME_LENGTH);
 			}
 
 			finalDNA[i] = dna[i].toCharArray();
