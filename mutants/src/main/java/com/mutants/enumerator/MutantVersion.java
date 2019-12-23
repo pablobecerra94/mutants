@@ -2,6 +2,7 @@ package com.mutants.enumerator;
 
 import com.mutants.strategy.MutantSolver;
 import com.mutants.strategy.MutantSolverV1;
+import com.mutants.strategy.MutantSolverV2;
 
 /**
  * Represents the different versions to solve the mutant algorithm
@@ -11,7 +12,7 @@ import com.mutants.strategy.MutantSolverV1;
  */
 public enum MutantVersion {
 
-	V1(new MutantSolverV1()), V2(new MutantSolverV1()), V3(new MutantSolverV1());
+	V1(new MutantSolverV1()), V2(new MutantSolverV2());
 
 	private MutantSolver mutantSolver;
 

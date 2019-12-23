@@ -1,12 +1,12 @@
-package com.mutants.request;
+package com.mutants.dto;
 
 /**
- * Represents the request of the mutant service 
- * Its a String array that contains the human dna
+ * Its a String array that contains the dna
+ * 
  * @author Pablo
  *
  */
-public class MutantRequest {
+public class Dna {
 
 	private String[] dna;
 
