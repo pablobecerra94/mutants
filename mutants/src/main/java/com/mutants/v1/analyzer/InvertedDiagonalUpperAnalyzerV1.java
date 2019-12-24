@@ -18,7 +18,7 @@ public class InvertedDiagonalUpperAnalyzerV1 implements LineAnalyzerV1 {
 		for (int i = Constants.SECUENCE_AMOUNT; i < dna.length; i++) {
 			charCount = 0;
 			for (int j = 0; j < i; j++) {
-				if (dna[i - j][j] == dna[i - j][j + 1]) {
+				if (dna[i - j][j] == dna[i - j - 1][j + 1]) {
 					charCount++;
 				} else {
 					charCount = 0;
@@ -26,7 +26,7 @@ public class InvertedDiagonalUpperAnalyzerV1 implements LineAnalyzerV1 {
 
 				if (charCount == Constants.SECUENCE_AMOUNT) {
 					repeatedAmount++;
-					repeatedAmount = 0;
+					charCount = 0;
 				}
 			}
 

@@ -34,10 +34,5 @@ public enum LineAnalyzerV1Type {
 		return lineAnalyzer;
 	}
 
-	public void setLineAnalyzer(LineAnalyzerV1 lineAnalyzer) {
-		this.lineAnalyzer = lineAnalyzer;
-	}
-
-
 
 }

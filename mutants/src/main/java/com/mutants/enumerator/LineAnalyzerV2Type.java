@@ -7,7 +7,7 @@ import com.mutants.v2.analyzer.LineAnalyzerV2;
 import com.mutants.v2.analyzer.VerticalAnalyzerV2;
 
 /**
- * Represents each analyzer in the V1 algorithm
+ * Represents each analyzer in the V2 algorithm
  * 
  * @author Pablo
  *
@@ -29,10 +29,5 @@ public enum LineAnalyzerV2Type {
 	public LineAnalyzerV2 getLineAnalyzer() {
 		return lineAnalyzer;
 	}
-
-	public void setLineAnalyzer(LineAnalyzerV2 lineAnalyzer) {
-		this.lineAnalyzer = lineAnalyzer;
-	}
-
 
 }

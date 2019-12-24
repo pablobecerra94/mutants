@@ -19,7 +19,7 @@ public class InvertedDiagonalLowerAnalyzerV1 implements LineAnalyzerV1 {
 		for (int i = 0; i < dna.length - Constants.SECUENCE_AMOUNT; i++) {
 			charCount = 0;
 			for (int j = 0; j < dna.length - i - 2; j++) {
-				if (dna[dna.length - j - 1][j + i + 1] == dna[dna.length - j - 1][j + i + 2]) {
+				if (dna[dna.length - j - 1][j + i + 1] == dna[dna.length - j - 2][j + i + 2]) {
 					charCount++;
 				} else {
 					charCount = 0;
@@ -27,7 +27,7 @@ public class InvertedDiagonalLowerAnalyzerV1 implements LineAnalyzerV1 {
 
 				if (charCount == Constants.SECUENCE_AMOUNT) {
 					repeatedAmount++;
-					repeatedAmount = 0;
+					charCount = 0;
 				}
 			}
 		}

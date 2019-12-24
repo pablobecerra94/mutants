@@ -21,6 +21,9 @@ public class MutantSolverV2 implements MutantSolver {
 
 	@Override
 	public boolean isMutant(String[] dna) throws InvalidDnaException {
+		if (dna == null || dna.length == 0) {
+			throw new InvalidDnaException(Constants.THE_DNA_MUST_NOT_BE_EMPTY);
+		}
 		String finalDna = buildString(dna);
 		int arrayLength = dna.length;
 
