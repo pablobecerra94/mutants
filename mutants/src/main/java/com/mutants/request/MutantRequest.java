@@ -1,4 +1,4 @@
-package com.mutants.dto;
+package com.mutants.request;
 
 /**
  * Its a String array that contains the dna
@@ -6,7 +6,7 @@ package com.mutants.dto;
  * @author Pablo
  *
  */
-public class Dna {
+public class MutantRequest {
 
 	private String[] dna;
 
