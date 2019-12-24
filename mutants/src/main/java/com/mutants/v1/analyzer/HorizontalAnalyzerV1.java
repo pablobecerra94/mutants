@@ -2,14 +2,17 @@ package com.mutants.v1.analyzer;
 
 import com.mutants.constants.Constants;
 
+/**
+ * 
+ * Analyze each row to detect strings of 4 equal characters
+ * 
+ * 
+ * @author Pablo
+ *
+ */
 public class HorizontalAnalyzerV1 implements LineAnalyzerV1 {
 
-	/**
-	 * Analyze each row to detect strings of 4 equal characters
-	 * 
-	 * @param dna
-	 * @return the number of equal character strings detected in the diagonals
-	 */
+
 	@Override
 	public int analyze(char[][] dna) {
 		int repeatedAmount = 0;

@@ -3,6 +3,14 @@ package com.mutants.v2.analyzer;
 import com.mutants.constants.Constants;
 import com.mutants.enumerator.ValidCharacter;
 
+/**
+ * 
+ * Analyze each row to detect strings of 4 equal characters
+ * 
+ * 
+ * @author Pablo
+ *
+ */
 public class HorizontalAnalyzerV2 implements LineAnalyzerV2 {
 
 	@Override

@@ -1,5 +1,11 @@
 package com.mutants.constants;
 
+/**
+ * Represents all the project's constants
+ * 
+ * @author Pablo
+ *
+ */
 public class Constants {
 
 	public static final String THE_DNA_MUST_NOT_BE_EMPTY = "The DNA must not be empty";

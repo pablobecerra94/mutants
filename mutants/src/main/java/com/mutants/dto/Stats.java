@@ -4,6 +4,12 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.mutants.serializer.DoubleSerializer;
 
+/**
+ * Stats Wrapper This class represents the stats of mutant analysis.
+ * 
+ * @author Pablo
+ *
+ */
 public class Stats {
 
 	private long countMutantsDna;

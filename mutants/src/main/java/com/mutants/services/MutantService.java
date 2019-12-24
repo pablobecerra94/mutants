@@ -44,12 +44,10 @@ public class MutantService {
 		return result;
 	}
 
-	public MutantAnalysis get(long id) {
-		MutantAnalysis result = mutantRepository.findById(id);
-		System.out.println(result);
-		return result;
-	}
 
+	/**
+	 * @return the stats of mutants analysis
+	 */
 	public Stats getStats() {
 		long mutants = mutantRepository.countIsMutant();
 		long total = mutantRepository.count();
@@ -57,6 +55,9 @@ public class MutantService {
 		return stats;
 	}
 
+	/**
+	 * Delete all database For Test purpose only
+	 */
 	public void deleteAll() {
 		mutantRepository.deleteAll();
 	}

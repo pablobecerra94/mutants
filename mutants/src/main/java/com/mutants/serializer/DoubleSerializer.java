@@ -9,6 +9,12 @@ import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.mutants.constants.Constants;
 
+/**
+ * Double serializer to round to one decimal
+ * 
+ * @author Pablo
+ *
+ */
 public class DoubleSerializer extends JsonSerializer<Double> {
 
 	@Override

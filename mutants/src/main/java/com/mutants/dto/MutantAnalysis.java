@@ -1,5 +1,11 @@
 package com.mutants.dto;
 
+/**
+ * Mutant Analysis DTO Entity that is written to the database
+ * 
+ * @author Pablo
+ *
+ */
 public class MutantAnalysis {
 
 	private String[] dna;

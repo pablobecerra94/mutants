@@ -8,6 +8,13 @@ import com.mutants.enumerator.LineAnalyzerV2Type;
 import com.mutants.exception.InvalidDnaException;
 import com.mutants.v2.analyzer.LineAnalyzerV2;
 
+/**
+ * First version. If there is a string of 5 equal characters, it is taken as a
+ * two sequences of 4 characters (characters from 1 to 4 and characters from 2 to 5)
+ * 
+ * @author Pablo
+ *
+ */
 public class MutantSolverV2 implements MutantSolver {
 
 	private List<LineAnalyzerV2> linesAnalyzer;
@@ -19,6 +26,13 @@ public class MutantSolverV2 implements MutantSolver {
 		}
 	}
 
+	/**
+	 * Method responsible for detecting whether humans are mutants
+	 * 
+	 * @param dna
+	 * @return true if the human is mutant, false if he is not mutant
+	 * @throws InvalidDnaException
+	 */
 	@Override
 	public boolean isMutant(String[] dna) throws InvalidDnaException {
 		if (dna == null || dna.length == 0) {
@@ -39,6 +53,14 @@ public class MutantSolverV2 implements MutantSolver {
 	}
 
 
+	/**
+	 * Transform String array to a single String
+	 * 
+	 * @param dna
+	 * @param length
+	 * @return
+	 * @throws InvalidDnaException
+	 */
 	private String buildString(String[] dna) {
 
 		StringBuilder stringBuilder = new StringBuilder();

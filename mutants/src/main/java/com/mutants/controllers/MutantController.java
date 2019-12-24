@@ -32,12 +32,11 @@ public class MutantController {
 	private MutantService mutantService;
 
 	/**
+	 * First version of the algorithm
 	 * 
 	 * @param data
-	 * @return 
-	 * 200 when the human is mutant
-	 * 403 when the human is not mutant
-	 * 404 when the dna is invalid
+	 * @return 200 when the human is mutant 403 when the human is not mutant 404
+	 *         when the dna is invalid
 	 * 
 	 */
 	@PostMapping("/v1/mutants")
@@ -50,6 +49,14 @@ public class MutantController {
 		}
 	}
 
+	/**
+	 * Second version of the algorithm
+	 * 
+	 * @param data
+	 * @return 200 when the human is mutant 403 when the human is not mutant 404
+	 *         when the dna is invalid
+	 * 
+	 */
 	@PostMapping("/v2/mutants")
 	public ResponseEntity<Object> isMutantV2(@RequestBody MutantRequest data) {
 		try {
@@ -60,11 +67,18 @@ public class MutantController {
 		}
 	}
 
+	/**
+	 * @return the amount of mutants, the total of human analyzed and the mutant
+	 *         ratio
+	 */
 	@GetMapping("/stats")
-	public ResponseEntity<Stats> isMutantV2() {
+	public ResponseEntity<Stats> getStats() {
 		return new ResponseEntity<Stats>(mutantService.getStats(), HttpStatus.OK);
 	}
 
+	/**
+	 * Delete all Database. Test purpose only.
+	 */
 	@DeleteMapping("/delete")
 	public ResponseEntity<Object> delete() {
 		mutantService.deleteAll();

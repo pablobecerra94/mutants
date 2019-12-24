@@ -3,15 +3,15 @@ package com.mutants.v1.analyzer;
 import com.mutants.constants.Constants;
 
 
+/**
+ * Analyze the diagonals above the main diagonal in descending order to detect
+ * strings of 4 equal characters
+ * 
+ * @author Pablo
+ *
+ */
 public class DiagonalUpperAnalyzerV1 implements LineAnalyzerV1 {
 
-	/**
-	 * Analyze the diagonals above the main diagonal in descending order to detect
-	 * strings of 4 equal characters
-	 * 
-	 * @param finalDna
-	 * @return the number of equal character strings detected in the diagonals
-	 */
 	@Override
 	public int analyze(char[][] dna) {
 		int repeatedAmount = 0;

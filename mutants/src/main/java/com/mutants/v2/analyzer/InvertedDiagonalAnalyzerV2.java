@@ -3,6 +3,13 @@ package com.mutants.v2.analyzer;
 import com.mutants.constants.Constants;
 import com.mutants.enumerator.ValidCharacter;
 
+/**
+ * Analyze the inverted diagonals in ascending order to detect strings of 4
+ * equal characters
+ * 
+ * @author Pablo
+ *
+ */
 public class InvertedDiagonalAnalyzerV2 implements LineAnalyzerV2 {
 
 	@Override

@@ -1,7 +1,7 @@
 package com.mutants.v1.analyzer;
 
 /**
- * Represents
+ * Its a interface to implement the analysis in each direction
  * 
  * @author Pablo
  *
