@@ -39,6 +39,24 @@ public class MutantSolverV2Test {
 	}
 
 	@Test
+	public void isNotMutantOneSequenceVertical() throws InvalidDnaException {
+		String dna[] = TestConstants.NOT_MUTANT_ONE_SEQUENCE_VERTICAL;
+		assertFalse(mutantSolver.isMutant(dna));
+	}
+
+	@Test
+	public void isNotMutantOneSequenceDiagonal() throws InvalidDnaException {
+		String dna[] = TestConstants.NOT_MUTANT_ONE_SEQUENCE_DIAGONAL;
+		assertFalse(mutantSolver.isMutant(dna));
+	}
+
+	@Test
+	public void isNotMutantOneSequenceInvertedDiagonal() throws InvalidDnaException {
+		String dna[] = TestConstants.NOT_MUTANT_ONE_SEQUENCE_INVERTED_DIAGONAL;
+		assertFalse(mutantSolver.isMutant(dna));
+	}
+
+	@Test
 	public void isMutantOnlyHorizontal() throws InvalidDnaException {
 		String dna[] = TestConstants.MUTANT_ONLY_HORIZONTAL;
 		assertTrue(mutantSolver.isMutant(dna));

@@ -5,6 +5,9 @@ public class TestConstants {
 	public static final String[] MUTANT_MELI_EXAMPLE = { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };
 	public static final String[] NOT_MUTANT_MELI_EXAMPLE = { "ATGCGA", "CAGTGC", "TTATTT", "AGACGG", "GCGTCA", "TCACTG" };
 	public static final String[] NOT_MUTANT_ONE_SEQUENCE_HORIZONTAL = { "AAAA", "TATA", "CGAG", "CAGG" };
+	public static final String[] NOT_MUTANT_ONE_SEQUENCE_VERTICAL = { "AGAC", "AATA", "AGAG", "AAGG" };
+	public static final String[] NOT_MUTANT_ONE_SEQUENCE_DIAGONAL = { "AGAC", "TATA", "AGAG", "AAGA" };
+	public static final String[] NOT_MUTANT_ONE_SEQUENCE_INVERTED_DIAGONAL = { "CGTA", "TGAT", "GAAG", "TAGA" };;
 	public static final String[] MUTANT_ONLY_HORIZONTAL = { "AAAA", "AAAA", "CGAG", "CAGG" };
 	public static final String[] MUTANT_ONLY_VERTICAL = { "AATC", "AACG", "AAGT", "AATC" };
 	public static final String[] MUTANT_ONLY_DIAGONAL = { "AACTG", "GAACT", "CGAAG", "TCTAA", "TCAGT" };
