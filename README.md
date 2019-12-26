@@ -7,7 +7,7 @@ MercadoLibre Technical Challenge
 - **Is mutant v1**
 	- Method: POST
 	- URL: [http://3.18.223.0:8080/api/v1/mutants](http://3.18.223.0:8080/api/v1/mutants)
-	- In this version iif there is a string of 5 equal characters, it is taken as a  single sequence of 4 characters (characters 1 to 4)
+	- In this version, if there is a string of 5 equal characters, it is taken as a  single sequence of 4 characters (characters 1 to 4)
 	- Examples:
 		- Request Mutant DNA: 
 
@@ -34,7 +34,7 @@ MercadoLibre Technical Challenge
 -  **Is mutant v2**
 	- Method: POST
 	- URL: [http://3.18.223.0:8080/api/v2/mutants](http://3.18.223.0:8080/api/v2/mutants)
-	- In this version if there is a string of 5 equal characters, it is taken as a two sequences of 4 characters (characters from 1 to 4 and characters from 2 to 5)
+	- In this version, if there is a string of 5 equal characters, it is taken as a two sequences of 4 characters (characters from 1 to 4 and characters from 2 to 5)
 	- Examples:
 		- Request Mutant DNA: 
 
