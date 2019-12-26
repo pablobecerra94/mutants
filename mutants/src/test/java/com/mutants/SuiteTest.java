@@ -5,6 +5,7 @@ import org.junit.runner.JUnitCore;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.mutants.api.MutantApiTest;
 import com.mutants.solver.MutantSolverV1Test;
 import com.mutants.solver.MutantSolverV2Test;
 
@@ -19,7 +20,7 @@ public class SuiteTest {
 
 	@Test
 	public void run() {
-		JUnitCore.runClasses(MutantSolverV1Test.class, MutantSolverV2Test.class);
+		JUnitCore.runClasses(MutantSolverV1Test.class, MutantSolverV2Test.class, MutantApiTest.class);
 	}
 
 }
