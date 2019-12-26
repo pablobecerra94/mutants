@@ -1,11 +1,18 @@
 package com.mutants.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Mutant Analysis DTO Entity that is written to the database
  * 
  * @author Pablo
  *
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class MutantAnalysis {
 
 	private String[] dna;
@@ -13,20 +20,5 @@ public class MutantAnalysis {
 	private boolean isMutant;
 
 
-	public String[] getDna() {
-		return dna;
-	}
-
-	public void setDna(String[] dna) {
-		this.dna = dna;
-	}
-
-	public boolean isMutant() {
-		return isMutant;
-	}
-
-	public void setMutant(boolean isMutant) {
-		this.isMutant = isMutant;
-	}
 
 }

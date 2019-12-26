@@ -22,6 +22,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import com.mutants.MutantsApplication;
 import com.mutants.TestConstants;
 
+/**
+ * Test the endpoints
+ * 
+ * @author Pablo
+ *
+ */
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = MutantsApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class MutantApiTest {
@@ -32,6 +38,11 @@ public class MutantApiTest {
 	@LocalServerPort
 	private int port = 8080;
 
+	/**
+	 * Test the v1 endpoint with the Meli not mutant example
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isNotMutantApiV1Test() throws JSONException {
 		JSONObject request = new JSONObject();
@@ -43,6 +54,11 @@ public class MutantApiTest {
 		assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
+	/**
+	 * Test the v1 endpoint with the Meli mutant example
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isMutantApiV1Test() throws JSONException {
 		JSONObject request = new JSONObject();
@@ -54,6 +70,11 @@ public class MutantApiTest {
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
+	/**
+	 * Test the v2 endpoint with the Meli not mutant example
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isNotMutantApiV2Test() throws JSONException {
 		JSONObject request = new JSONObject();
@@ -65,6 +86,11 @@ public class MutantApiTest {
 		assertEquals(HttpStatus.FORBIDDEN, response.getStatusCode());
 	}
 
+	/**
+	 * Test the v2 endpoint with the Meli mutant example
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isMutantApiV2Test() throws JSONException {
 		JSONObject request = new JSONObject();
@@ -76,6 +102,11 @@ public class MutantApiTest {
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
 
+	/**
+	 * Test the v1 endpoint with an invalid dna
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isDnaInvalidV1Test() throws JSONException {
 		JSONObject request = new JSONObject();
@@ -87,6 +118,11 @@ public class MutantApiTest {
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
 
+	/**
+	 * Test the v2 endpoint with an invalid dna
+	 * 
+	 * @throws JSONException
+	 */
 	@Test
 	public void isDnaInvalidV2Test() throws JSONException {
 		JSONObject request = new JSONObject();

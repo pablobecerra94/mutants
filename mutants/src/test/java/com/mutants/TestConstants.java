@@ -1,5 +1,11 @@
 package com.mutants;
 
+/**
+ * Constants used in test
+ * 
+ * @author Pablo
+ *
+ */
 public class TestConstants {
 
 	public static final String[] MUTANT_MELI_EXAMPLE = { "ATGCGA", "CAGTGC", "TTATGT", "AGAAGG", "CCCCTA", "TCACTG" };
