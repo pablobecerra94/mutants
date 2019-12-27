@@ -35,11 +35,11 @@ public class HorizontalAnalyzerV2 implements LineAnalyzerV2 {
 		StringBuilder regularExpressionBuilder = new StringBuilder();
 
 		for (ValidCharacter validCharacter : ValidCharacter.values()) {
-			regularExpressionBuilder.append("(");
+			regularExpressionBuilder.append(Constants.INITIAL_REGULAR_EXPRESSION_CHARACTERS);
 			for (int i = 0; i <= Constants.SECUENCE_AMOUNT; i++) {
 				regularExpressionBuilder.append(validCharacter);
 			}
-			regularExpressionBuilder.append(".*)|");
+			regularExpressionBuilder.append(Constants.FINAL_REGULAR_EXPRESSION_CHARACTERS);
 		}
 
 		return regularExpressionBuilder.toString();
