@@ -6,6 +6,7 @@ import java.util.List;
 import com.mutants.constants.Constants;
 import com.mutants.enumerator.LineAnalyzerV2Type;
 import com.mutants.exception.InvalidDnaException;
+import com.mutants.utils.StringArrayUtils;
 import com.mutants.v2.analyzer.LineAnalyzerV2;
 
 /**
@@ -38,7 +39,7 @@ public class MutantSolverV2 implements MutantSolver {
 		if (dna == null || dna.length == 0) {
 			throw new InvalidDnaException(Constants.THE_DNA_MUST_NOT_BE_EMPTY);
 		}
-		String finalDna = buildString(dna);
+		String finalDna = StringArrayUtils.transformStringArrayToSingleString(dna);
 		int arrayLength = dna.length;
 
 		int repeatedAmount = 0;
@@ -50,26 +51,6 @@ public class MutantSolverV2 implements MutantSolver {
 		}
 
 		return false;
-	}
-
-
-	/**
-	 * Transform String array to a single String
-	 * 
-	 * @param dna
-	 * @param length
-	 * @return
-	 * @throws InvalidDnaException
-	 */
-	private String buildString(String[] dna) {
-
-		StringBuilder stringBuilder = new StringBuilder();
-
-		for (String dnaString : dna) {
-			stringBuilder.append(dnaString);
-		}
-
-		return stringBuilder.toString();
 	}
 
 }
